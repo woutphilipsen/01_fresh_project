@@ -9,9 +9,7 @@ Route::get('test', function() {
 
 // Pass & Request data to your views
 Route::get('/', function () {
-    return view('test', [
-        'name' => request('name')
-    ]);
+    return view('welcome');
 });
 
 // Render the welcome page
