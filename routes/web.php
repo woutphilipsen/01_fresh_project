@@ -29,4 +29,7 @@ Route::get('/about', function() {
     ]);
 });
 
+// Route to article controller
+Route::get('/articles/{article}', 'ArticlesController@show');
+
 Route::get('/posts/{post}', 'PostsController@show');
