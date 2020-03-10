@@ -7,6 +7,6 @@
 </head>
 <body>
     <h1>My Blog Post</h1>
-    <h3>{{ $post->body }}</h3>
+    <h3>{{ $post->slug . ' ' . $post->id }}</h3>
 </body>
 </html>
