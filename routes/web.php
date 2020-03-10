@@ -30,6 +30,9 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::get('/posts/{post}', 'PostsController@show');
+
+/* 
 // setup a route to accept wildcards
 // wildcard is available in callback function
 Route::get('/posts/{post}', function ($post) {
@@ -49,3 +52,4 @@ Route::get('/posts/{post}', function ($post) {
         'post' => $posts[$post]
     ]);
 });
+*/
