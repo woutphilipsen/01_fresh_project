@@ -27,13 +27,23 @@ class ArticlesController extends Controller
     // shows a view to create a new resource
     public function create()
     {
-
+        return view('articles.create');
     }
     
     // persist the resource to database
     public function store()
     {
+        // TODO: validation
+        $article = new Article();
+        
+        // TODO: claen this pile up
+        $article->title = request('title');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
 
+        $article->save();
+
+        return redirect('/articles');
     }
     
     // show a view to edit an existing resource

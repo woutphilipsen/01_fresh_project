@@ -16,9 +16,11 @@ Route::get('/about', function() {
 
 // Show all articles
 Route::get('/articles', 'ArticlesController@index');
+// Store the new article
+Route::post('/articles', 'ArticlesController@store');
+// Edit article
+Route::get('/articles/create', 'ArticlesController@create');
 // Show 1 article
 Route::get('/articles/{article}', 'ArticlesController@show');
-// Edit article
-Route::get('/articles/{article}/edit', 'ArticlesController@edit');
 
 Route::get('/articles/{article}/update', 'ArticlesController@update');
