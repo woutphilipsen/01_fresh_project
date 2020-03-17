@@ -14,6 +14,8 @@ Route::get('/about', function() {
     ]);
 });
 
+// ----------------ARTICLE ROUTES----------------
+
 // Show all articles
 Route::get('/articles', 'ArticlesController@index');
 // Store the new article
@@ -22,5 +24,9 @@ Route::post('/articles', 'ArticlesController@store');
 Route::get('/articles/create', 'ArticlesController@create');
 // Show 1 article
 Route::get('/articles/{article}', 'ArticlesController@show');
+// Edit article 
+Route::get('/articles/{article}/edit', 'ArticlesController@edit');
+// Update the article
+Route::put('/articles/{article}', 'ArticlesController@update');
 
-Route::get('/articles/{article}/update', 'ArticlesController@update');
+// ----------------END ARTICLE ROUTES------------
