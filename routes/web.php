@@ -16,6 +16,9 @@ Route::get('/about', function() {
 
 // Show all articles
 Route::get('/articles', 'ArticlesController@index');
-
-// Route to article controller
+// Show 1 article
 Route::get('/articles/{article}', 'ArticlesController@show');
+// Edit article
+Route::get('/articles/{article}/edit', 'ArticlesController@edit');
+
+Route::get('/articles/{article}/update', 'ArticlesController@update');
