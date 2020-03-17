@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    public function getRouteKeyName()
-    {
-        return 'slug'; // Article::where('slug', $article)->first();
-    }
+    // allow mass assignment & take responsibility to secure app by yourself
+    protected $guarded = [];
 }

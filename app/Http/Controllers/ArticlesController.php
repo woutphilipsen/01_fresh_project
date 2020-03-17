@@ -30,20 +30,7 @@ class ArticlesController extends Controller
     // persist the resource to database
     public function store()
     {
-        request()->validate([
-            'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
-        
-        $article = new Article();
-        
-        // TODO: claen this pile up
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
+        Article::create($this->validateArticle());
 
         return redirect('/articles');
     }
@@ -57,18 +44,7 @@ class ArticlesController extends Controller
     // persist the edited resource
     public function update(Article $article)
     {
-        request()->validate([
-            'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
-
-        // TODO: claen this pile up
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-    
-        $article->save();
+        $article->update($this->validateArticle());
 
         return redirect('/articles/' . $article->id);
     }
@@ -77,6 +53,15 @@ class ArticlesController extends Controller
     public function destroy()
     {
 
+    }
+
+    protected function validateArticle()
+    {
+        return request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]); 
     }
 
 }
