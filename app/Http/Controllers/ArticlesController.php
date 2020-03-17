@@ -32,7 +32,12 @@ class ArticlesController extends Controller
     // persist the resource to database
     public function store()
     {
-        // TODO: validation
+        request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
+        
         $article = new Article();
         
         // TODO: claen this pile up
@@ -55,6 +60,12 @@ class ArticlesController extends Controller
     // persist the edited resource
     public function update($id)
     {
+        request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
+
         $article = Article::find($id);
 
         // TODO: claen this pile up
