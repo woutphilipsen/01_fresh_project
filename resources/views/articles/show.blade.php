@@ -16,6 +16,12 @@
                     </p>
 
                     <p>{{ $article->body }}</p>
+
+                    <p>
+                        @foreach ($article->tags as $tag)
+                            <a href="{{ route('articles.index', ['tag' => $tag->name]) }}" style="margin-top: 15px;">{{ $tag->name }}</a>
+                        @endforeach
+                    </p>
             </div>
         </div>
     </div>
