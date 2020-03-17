@@ -8,4 +8,10 @@ class Article extends Model
 {
     // allow mass assignment & take responsibility to secure app by yourself
     protected $guarded = [];
+
+    // return string that represents the path to that specific article
+    public function path()
+    {
+        return route('articles.show', $this);
+    }
 }

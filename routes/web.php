@@ -17,13 +17,13 @@ Route::get('/about', function() {
 // ----------------ARTICLE ROUTES----------------
 
 // Show all articles
-Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles', 'ArticlesController@index')->name('articles.index');
 // Store the new article
 Route::post('/articles', 'ArticlesController@store');
 // Edit article
 Route::get('/articles/create', 'ArticlesController@create');
 // Show 1 article
-Route::get('/articles/{article}', 'ArticlesController@show');
+Route::get('/articles/{article}', 'ArticlesController@show')->name('articles.show');
 // Edit article 
 Route::get('/articles/{article}/edit', 'ArticlesController@edit');
 // Update the article
