@@ -7,6 +7,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// container example
+Route::get('/container', function () {
+    $container = new \App\Container();
+    
+    $container->bind('example', function() {
+        return new \App\Example();
+    });
+
+    $example = $container->resolve('example');
+
+    $example->go();
+});
+
 // Render the about page
 Route::get('/about', function() {
     return view('about', [
