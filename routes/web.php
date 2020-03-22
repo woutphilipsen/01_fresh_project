@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Route;
     });
 // ----------------END ABOUT PAGE----------------
 
+// -----------------CONTACT PAGE-----------------
+    Route::get('/contact', 'ContactController@show');
+    Route::post('/contact', 'ContactController@store');
+// ---------------END CONTACT PAGE---------------
+
 
 // ----------------ARTICLE ROUTES----------------
     // Show all articles
