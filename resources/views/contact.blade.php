@@ -20,7 +20,7 @@
         <form
             method="POST"
             action="/contact"
-            class="bg-white p6 ronded shadow-md"
+            class="bg-white p-6 rounded shadow-md"
             style="width: 300px;"
         >
             @csrf
@@ -47,7 +47,7 @@
 
             <button 
                 type="submit"
-                class="bg-blue-500 py-2 text-white rounded-fll text-sm w-full"
+                class="bg-blue-500 py-2 text-white rounded-full text-sm w-full"
             >
                 Email Me
             </button>
